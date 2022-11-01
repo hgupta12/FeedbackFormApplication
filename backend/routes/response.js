@@ -7,13 +7,15 @@ const {
   updateResponse,
   deleteResponse,
 } = require("../controllers/response");
+const protect = require('../middleware/authMiddleware')
 
-router.route("/:formId").post(addResponse).get(getAllResponsesToAForm);
+router.route("/form/:formId").post(protect,addResponse).get(getAllResponsesToAForm);
 
 router
-  .route("/:formId/:responseId")
+  .route("/:responseId")
   .get(getSingleResponse)
   .patch(updateResponse)
   .delete(deleteResponse);
+
 
 module.exports = router

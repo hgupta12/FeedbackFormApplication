@@ -7,6 +7,7 @@ const {
   deleteForm,
   addQuestion,
   deleteQuestion,
+  updateQuestion
 } = require("../controllers/form");
 const protect  = require('../middleware/authMiddleware')
 
@@ -22,4 +23,5 @@ router.post("/question/:formId",protect,addQuestion)
 
 router.delete('/question/delete/:questionId',protect,deleteQuestion)
 
+router.patch('/question/edit/:questionId',protect,updateQuestion )
 module.exports = router;
