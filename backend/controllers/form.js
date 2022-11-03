@@ -20,7 +20,7 @@ const addForm = asyncHandler(async (req, res) => {
     const message = {
       to: user.email,
       from: "sxgean@block521.com",
-      subject: "Your response has been submitted!",
+      subject: "You created a new form!",
       text: `${user.name}, you created a form!`,
       html: responseHTML,
     };

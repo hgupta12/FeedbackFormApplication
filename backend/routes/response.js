@@ -14,8 +14,8 @@ router.route("/form/:formId").post(protect,addResponse).get(getAllResponsesToAFo
 router
   .route("/:responseId")
   .get(getSingleResponse)
-  .patch(updateResponse)
-  .delete(deleteResponse);
+  .patch(protect,updateResponse)
+  .delete(protect,deleteResponse);
 
 
 module.exports = router
